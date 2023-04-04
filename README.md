@@ -10,7 +10,7 @@ The first Mahjong computer game was created in 1981 by Brodie Lockard. Brodie sa
 
 ## WireFrame & ScreenShots:
 
-![WireFrame Screenshot](Mahjong-wireframe.png)
+![WireFrame Screenshot](images/Mahjong-wireframe.png)
 
 
 ## Getting Started: 🀄
@@ -50,3 +50,6 @@ Furture Plans & Enhancements:
 
 Mahjong tile designs came from,
 <https://github.com/FluffyStuff/riichi-mahjong-tiles.git>, and here is the licensing link, <https://creativecommons.org/licenses/by/4.0/>.
+
+Casino sounds by Kenney Vleugels (www.kenney.nl)
+

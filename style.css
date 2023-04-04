@@ -4,5 +4,39 @@
 }
 
 h1 {
-    
+    text-align: center;
 }
+
+h2 {
+    color: rgb(138,21,28);
+}
+
+h3 {
+    color: white;
+}
+
+button {
+    background-color: black;
+    color: white;
+    padding: 5px 5px;
+    margin: 20px 20px;
+    border-radius: 5px;
+}
+
+#side-div {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 400px;
+    background-color: lightgrey;
+    border-radius: 5px;
+    box-shadow: 7px 7px 5px darkgrey;
+
+}
+
+#game-play > section {
+    background-color: lightgray;
+}
+
+
+

@@ -38,5 +38,19 @@ button {
     background-color: lightgray;
 }
 
+#Board {
+    display: grid;
+    grid-template-columns: repeat(8, 10vmin);
+    margin-top: 10vmin;
+    height: 40vmin;
+    width: 40vmin;
+    align-items: center;
+}
+
+#Board > div {
+    height: 20px;
+    width: 20px;
+    background-color: black;
+}
 
 

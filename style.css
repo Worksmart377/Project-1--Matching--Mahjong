@@ -23,7 +23,7 @@ button {
     border-radius: 5px;
 }
 
-#side-div {
+div#side-div {
     display: flex;
     flex-direction: column;
     width: 200px;
@@ -31,7 +31,7 @@ button {
     background-color: lightgrey;
     border-radius: 5px;
     box-shadow: 7px 7px 5px darkgrey;
-
+    float: top;
 }
 
 #game-play > section {
@@ -41,16 +41,21 @@ button {
 #Board {
     display: grid;
     grid-template-columns: repeat(8, 10vmin);
-    margin-top: 10vmin;
+    margin: 10vmin 30vmin;
     height: 40vmin;
     width: 40vmin;
-    align-items: center;
+    place-items: center;
 }
 
 #Board > div {
     height: 20px;
     width: 20px;
     background-color: black;
+}
+
+img {
+    height: 100%;
+    width: 100%;
 }
 
 

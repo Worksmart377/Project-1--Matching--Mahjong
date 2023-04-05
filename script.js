@@ -34,21 +34,87 @@ Once the player selects every match on the board and they have all been removed 
  
  
  
- /*----- constants- changing variables -----*/
+ /*----- constants variables -----*/
 
-let  boardArr = [
-    ['/images/r-bamboo.png','/images/bamboo2-b.png', '/images/blank.png','/images/bamboo4-b.png','/images/black/chun.png','/images/bamboo5-b.png', '/images/man1.png', '/images/bamboo6-b.png'],
-    ['/images/man2.png','/images/bamboo7-b.png', '/images/man8.png','/images/bamboo8-b.png','/images/pin9.png','/images/bamboo9-b.png', '/images/man4.png', '/images/bird-b.png'],
-    ['/images/bamboo4.png','/images/blank-b.png', '/images/bamboo5.png','/images/chun-b.png','/images/pin7.png', '/images/hatsu-b.png', '/images/bamboo6.png', '/images/man1-b.png'],
-    ['/images/bamboo7.png','/images/man2-b.png', '/images/rpin5.png','/images/man3-b.png','/images/bird.png','/images/man4-b.png', '/images/pin10.png', '/images/man5-b.png'],
-    ['/images/pin6.png','/images/man6-b.png', '/images/pin8.png','/images/man7-b.png','/images/bamboo8.png','/images/man8-b.png', '/images/pin3.png', '/images/nan-b.png'],
-    ['/images/pin5.png','/images/pei-b.png', '/images/pin4.png','/images/pin1-b.png','/images/hatsu.png','/images/pin7-b.png', '/images/nan.png', '/images/pin3-b.png'],
-    ['/images/pin1.png','/images/pin4-b.png', '/images/pei.png','/images/pin5-b.png','/images/man6.png','/images/pin6-b.png', '/images/man7.png', '/images/pin8-b.png'],
-    ['/images/bamboo9.png','/images/pin9-b.png', '/images/man5.png','/images/pin10-b.png','/images/bamboo2.png','/images/r-bamboo-b.png', '/images/man3.png', '/images/rpin5-b.png'],   
-];
+const  tiles = [
+    { name:'r-bamboo', Image:'./images/r-bamboo.png'},
+    { name:'bamboo2', Image:'./images/bamboo2-b.png'},
+    { name:'blank', Image:'./images/blank.png'},
+    { name:'bamboo4', Image:'./images/bamboo4-b.png'},
+    { name:'chun', Image:'/images/chun.png'},
+    { name:'bamboo5', Image:'/images/bamboo5-b.png'},
+    { name:'man1', Image:'/images/man1.png'},
+    { name:'bamboo6', Image:'/images/bamboo6-b.png'},
 
-  /*----- state- unchanging variables -----*/
+    { name:'man2', Image:'/images/man2.png'},
+    { name:'bamboo7', Image:'/images/bamboo7-b.png'},
+    { name:'man8', Image: '/images/man8.png'},
+    { name:'bamboo8', Image:'/images/bamboo8-b.png'},
+    { name:'pin9', Image:'/images/pin9.png'},
+    { name:'bamboo9', Image:'/images/bamboo9-b.png'},
+    { name:'man4', Image:'/images/man4.png'},
+    { name:'bird', Image:'/images/bird-b.png'},
+
+    { name:'bamboo4', Image:'/images/bamboo4.png'},
+    { name:'blank', Image:'/images/blank-b.png'},
+    { name:'bamboo5', Image:'/images/bamboo5.png'},
+    { name:'chun', Image:'/images/chun-b.png'},
+    { name:'pin7', Image:'/images/pin7.png'},
+    { name:'hatsu', Image: '/images/hatsu-b.png'},
+    { name:'bamboo6', Image:'/images/bamboo6.png'},
+    { name:'man1', Image:'/images/man1-b.png'},
+
+    { name:'bamboo7', Image:'/images/bamboo7.png'},
+    { name:'man2', Image:'/images/man2-b.png'},
+    { name:'rpin5',Image:'/images/rpin5.png'},
+    { name:'man3', Image:'/images/man3-b.png'}, 
+    { name:'bird', Image:'/images/bird.png'},
+    { name:'man4', Image:'/images/man4-b.png'},
+    { name:'pin10', Image:'/images/pin10.png'},
+    { name:'man5', Image:'/images/man5-b.png'},
+
+    { name:'pin6', Image:'/images/pin6.png'},
+    { name:'man6', Image:'/images/man6-b.png'},
+    { name:'pin8', Image:'/images/pin8.png'},
+    { name:'man7', Image:'/images/man7-b.png'},
+    { name:'bamboo8', Image:'/images/bamboo8.png'},
+    { name:'man8', Image:'/images/man8-b.png'},
+    { name:'pin3', Image:'/images/pin3.png'},
+    { name:'nan', Image:'/images/nan-b.png'},
+
+    { name:'pin5', Image:'//images/pin5.png'},
+    { name:'pei', Image:'/images/pei-b.png'},
+    { name:'pin4', Image:'/images/pin4.png'},
+    { name:'pin1', Image:'/images/pin1-b.png'},
+    { name:'hatsu', Image:'/images/hatsu.png'},
+    { name:'pin7', Image:'/images/pin7-b.png'},
+    { name:'nan', Image:'/images/nan.png'},
+    { name:'pin3', Image:'/images/pin3-b.png'},
+
+    {name:'pin1', Image:'image:/images/pin1.png'},
+    {name:'pin4', Image:'/images/pin4-b.png'},
+    {name:'pei', Image:'/images/pei.png'},
+    {name:'pin5', Image:'/images/pin5-b.png'},
+    {name:'man6', Image:'/images/man6.png'},
+    {name:'pin6', Image:'/images/pin6-b.png'},
+    {name:'man7', Image: '/images/man7.png'}, 
+    {name:'pin8', Image: '/images/pin8-b.png'},
+
+    {name:'bamboo9', Image:'/images/bamboo9.png'},
+    {name:'pin9', Image:'/images/pin9-b.png'},
+    {name:'man5', Image: '/images/man5.png'},
+    {name:'pin10', Image:'/images/pin10-b.png'},
+    {name:'bamboo2', Image:'/images/bamboo2.png'},
+    {name:'r-bamboo', Image:'/images/r-bamboo-b.png'},
+    {name:'man3', Image:'/images/man3.png'},
+    {name:'rpin5', Image:'/images/rpin5-b.png'},
+]
+
+
+
+  /*----- changing variables -----*/
 let winner;
+
 
 
 
@@ -69,47 +135,52 @@ restartGame.addEventListener('click',initialize);
   
   /*----- functions -----*/
 
-  let boardShuffle= function (boardArr) {
-     for(i = 0; i < boardArr.length; i++) {
-         for(j = 0; j < boardArr[i].length; j++) {
-         }  
-     }
-     let remainingTiles = boardArr.length, j, i;
-     while (remainingTiles) {
-       i = Math.floor(Math.random() * remainingTiles--);
-       j = boardArr[remainingTiles];
-       boardArr[remainingTiles] = boardArr[i];
-       boardArr[i] = j;
-     } 
-     return boardArr;
-   }
-
+  
   initialize()
 
-function initialize() {
-    return boardShuffle;
-    
-// render();
-}
+  
+  
+  function initialize() {
+       
+      render();
+    }
+
+
 function render() {
     renderBoard();
-    renderControls();
-    renderMessages();
+    // renderControls();
+    // renderMessages();
 }
 
 
  function renderBoard() {
-    boardArr.forEach((colArr,colIdx) => {
+    board.forEach(function (rowArr,rowIdx) {
+        rowArr.forEach(function (colVal, colIdx) {
+           const tileId = `r${rowIdx}c${colIdx}`; 
+           const tileEl =  document.getElementById(tileId);
+           console.log(rowIdx,colIdx)
+           const tileImg = document.createElement('img')
+           tileImg.setAttribute('src',boardArr.Image)
+           tileEl.appendChild(tileImg)
+           
+        });
+ });
+ } renderBoard()
 
-    })
- }
-    
-// function shufflePics(pictureArr)  {
-//     return pictureArr[Math.floor(Math.random() * pictureArr.length)];
 
-// }
-// console.log(shufflePics(pictureArr));
 
+ 
+//  function renderMessages(messageToPlayer) {
+//     messageToPlayer
+
+//  }
+ 
+ 
+   
+function shufflePics(boardArr)  {
+    return boardArr[Math.floor(Math.random() * boardArr.length)];
+
+}
 
 
 //this function will play sound when shuffle or restart game buttion is clicked

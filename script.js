@@ -119,6 +119,8 @@ let winner;
 
 const width = 8;
  let boardArr = [];
+ let tempArr = [];
+
 
 //shuffle sound variable
 // const sound = new Audio();
@@ -142,34 +144,40 @@ shuffleTiles.addEventListener('click',shuffleBoard);
   
   
   function initialize() {
-       
+    window.onload =function() {
+        renderBoard
+     }
       render();
-    }
-
+    
+}
 
 function render() {
-    renderBoard();
     // renderControls();
     // renderMessages();
 }
 
 
  function renderBoard() {
+    gameBoard.replaceChildren(); 
         for (let i=0; i < tilesArr.length; i++) {
             let tile = document.createElement('div');
             tile.classList = 'tileCells';
             let pic = document.createElement("img");
             pic.setAttribute('src',tilesArr[i].Image);
+            tile.setAttribute('id',tilesArr[i].name);
             tile.appendChild(pic);
             gameBoard.appendChild(tile);
             boardArr.push(tile);
-    }
+            
+    }   
+    // if(boardArr.length === 64) {
+    //     return;
+    // }
  }
-   
            
  renderBoard();
 
-
+console.log(tilesArr.length);
 
  
 //  function renderMessages(messageToPlayer) {
@@ -191,7 +199,7 @@ function shuffleBoard()  {
         let tile = document.createElement('div');
         tile.classList = 'tileCells';
         let pic = document.createElement("img");
-        pic.setAttribute('src',boardArr[i].firstChild.getAttribute('src')); //boardarr index has one child(image tag) which has an attribute that will use getattribute to pass in src to grab the image
+        pic.setAttribute('src',boardArr[i].firstChild.getAttribute('src')); //boardarr index has one child(image-tag) which has an attribute that will use getAttribute to pass in src to grab the image
         tile.appendChild(pic);
         
         gameBoard.appendChild(tile);
@@ -199,17 +207,25 @@ function shuffleBoard()  {
 playSound();
 };
 
+// Write findMatch function:
+/*When item clicked grab the object key name and store in an array and change to active status. Then second item clicked can be stored as well. Compare the 2 keys and if they match then highlight both and remove them and put them into another array to hide them. If not then return message to player. If item is clicked twice the item will be put back and active status removed.*/
 
-function findMatch(tilesArr) {
+function findMatch(boardArr) {
+    for(const [key, value] of Object.entries(boardArr)) {
+        console.log(`${key}: ${value}`);
+    }
+findMatch();
+    
+
 
 }
-
+console.log(Object.keys(boardArr))
 //this function will play sound when shuffle or restart game buttion is clicked
 function playSound() {
         let sound = new Audio('dieShuffle3.wav');
         sound.loop = false;
         sound.play(); 
-        audio = document.querySelector('#Shuffle');
+        audio = document.querySelector('button');
         audio.addEventListener('click');
 
 

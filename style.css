@@ -44,13 +44,13 @@ div#side-div {
     margin: 10vmin 30vmin;
     height: 40vmin;
     width: 40vmin;
-    gap: 1vmin;
+    gap: 3px;
     place-items: center;
 }
 
 #board > div {
-    height: 15px;
-    width: 15px;
+    height: 40px;
+    width: 40px;
     background-color: black;
 }
 

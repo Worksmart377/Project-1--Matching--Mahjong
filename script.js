@@ -60,7 +60,7 @@ Once the player selects every match on the board and they have all been removed 
     { name:'blank', Image:'/images/blank-b.png'},
     { name:'bamboo5', Image:'/images/bamboo5.png'},
     { name:'chun', Image:'/images/chun-b.png'},
-    { name:'pin7', Image:'/images/pin7.png'},
+    { name:'shaa', Image:'/images/shaa.png'},
     { name:'hatsu', Image: '/images/hatsu-b.png'},
     { name:'bamboo6', Image:'/images/bamboo6.png'},
     { name:'man1', Image:'/images/man1-b.png'},
@@ -83,16 +83,16 @@ Once the player selects every match on the board and they have all been removed 
     { name:'pin3', Image:'/images/pin3.png'},
     { name:'nan', Image:'/images/nan-b.png'},
 
-    { name:'pin5', Image:'//images/pin5.png'},
+    { name:'pin5', Image:'/images/pin5.png'},
     { name:'pei', Image:'/images/pei-b.png'},
     { name:'pin4', Image:'/images/pin4.png'},
     { name:'pin1', Image:'/images/pin1-b.png'},
     { name:'hatsu', Image:'/images/hatsu.png'},
-    { name:'pin7', Image:'/images/pin7-b.png'},
+    { name:'shaa', Image:'/images/shaa-b.png'},
     { name:'nan', Image:'/images/nan.png'},
     { name:'pin3', Image:'/images/pin3-b.png'},
 
-    {name:'pin1', Image:'image:/images/pin1.png'},
+    {name:'pin1', Image:'/images/pin1.png'},
     {name:'pin4', Image:'/images/pin4-b.png'},
     {name:'pei', Image:'/images/pei.png'},
     {name:'pin5', Image:'/images/pin5-b.png'},
@@ -158,9 +158,12 @@ function render() {
         for (let i=0; i < width * width; i++) {
             let tile = document.createElement('div');
             tile.classList = 'tileCells';
-            tile.innerHTML= '';
+            let pic = document.createElement("img");
+            pic.setAttribute('src',tilesArr[i].Image);
+            tile.appendChild(pic);
             gameBoard.appendChild(tile);
             tilesArr.push(tile);
+
         }
 
  }

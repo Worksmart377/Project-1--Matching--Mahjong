@@ -118,7 +118,7 @@ Once the player selects every match on the board and they have all been removed 
 let winner;
 
 const width = 8;
-
+ let boardArr = [];
 
 //shuffle sound variable
 // const sound = new Audio();
@@ -133,7 +133,7 @@ const gameBoard = document.getElementById('board');
 
   /*----- event listeners -----*/
 restartGame.addEventListener('click',initialize);
-  
+shuffleTiles.addEventListener('click',shuffleBoard);
   /*----- functions -----*/
 
   
@@ -162,9 +162,8 @@ function render() {
             pic.setAttribute('src',tilesArr[i].Image);
             tile.appendChild(pic);
             gameBoard.appendChild(tile);
-            tilesArr.push(tile);
-
-        }
+            boardArr.push(tile);
+    }
 
  }
    
@@ -181,9 +180,14 @@ function render() {
  
  
    
-function shufflePics(boardArr)  {
-    return boardArr[Math.floor(Math.random() * boardArr.length)];
-
+function shuffleBoard(boardArr)  {
+        for (let i = 0; i <boardArr.length; i++) {
+            let mix = Math.floor(Math.random() * (boardArr.length));
+            let tempV = boardArr[i];
+            boardArr[i] = boardArr[mix];
+            boardArr[mix] = tempV;
+        }
+        
 }
 
 

@@ -31,13 +31,20 @@ div#side-div {
     background-color: lightgrey;
     border-radius: 5px;
     box-shadow: 7px 7px 5px darkgrey;
-    float: top;
 }
 
-#game-play > section {
+section.game-play, p, h3 {
     background-color: lightgray;
+    align-items: center;
+    margin: auto auto;
+    padding: 10px 10px;
+    
 }
 
+section.game-play {
+    border-radius: 5px;
+    box-shadow: 7px 7px 5px darkgrey;
+}
 #board {
     display: grid;
     grid-template-columns: repeat(8, 10vmin);

@@ -155,7 +155,7 @@ function render() {
 
 
  function renderBoard() {
-        for (let i=0; i < width * width; i++) {
+        for (let i=0; i < tilesArr.length; i++) {
             let tile = document.createElement('div');
             tile.classList = 'tileCells';
             let pic = document.createElement("img");
@@ -196,16 +196,23 @@ function shuffleBoard()  {
         
         gameBoard.appendChild(tile);
 }
+playSound();
 };
 
 
-// function findMatch(tilesArr) {
+function findMatch(tilesArr) {
 
-// }
+}
+
 //this function will play sound when shuffle or restart game buttion is clicked
-// playSound() {
-//     if(clicked) {
-//         sound.currentTime = 0;
-//         sound.play();
-//     }
-// };
+function playSound() {
+        let sound = new Audio('dieShuffle3.wav');
+        sound.loop = false;
+        sound.play(); 
+        audio = document.querySelector('#Shuffle');
+        audio.addEventListener('click');
+
+
+    }
+      
+    

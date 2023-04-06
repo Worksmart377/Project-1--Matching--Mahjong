@@ -119,7 +119,7 @@ let winner;
 
 const width = 8;
  let boardArr = [];
- let tempArr = [];
+ let MatchesArr = [];
 
 
 //shuffle sound variable
@@ -133,51 +133,66 @@ const shuffleTiles = document.querySelector('#Shuffle');
 const messageToPlayer = document.querySelector('h2');
 const gameBoard = document.getElementById('board');
 
+
   /*----- event listeners -----*/
-restartGame.addEventListener('click',initialize);
-shuffleTiles.addEventListener('click',shuffleBoard);
+restartGame.addEventListener('click',resetBoard);
+gameBoard.addEventListener('click',function(e){
+    if(e.target.tagName === 'IMG') {
+    let tileName = e.target.classList[0]
+    console.log(e.target);
+    console.log(tileName);
+}
+});
+
+
+// shuffleTiles.addEventListener('click',shuffleBoard);
   /*----- functions -----*/
 
-  
-  initialize()
+    initialize();
 
-  
+ function resetBoard() {
+    location.reload;
+    playSound();
+ } 
   
   function initialize() {
-    window.onload =function() {
-        renderBoard
-     }
-      render();
+    // window.onload =function() {
+    //     renderBoard
+    //  }
+      renderBoard();
     
 }
 
-function render() {
-    // renderControls();
-    // renderMessages();
-}
-
-
  function renderBoard() {
-    gameBoard.replaceChildren(); 
         for (let i=0; i < tilesArr.length; i++) {
             let tile = document.createElement('div');
-            tile.classList = 'tileCells';
             let pic = document.createElement("img");
             pic.setAttribute('src',tilesArr[i].Image);
-            tile.setAttribute('id',tilesArr[i].name);
+            // tile.setAttribute('class',tilesArr[i].name);
+            pic.classList.add(tilesArr[i].name);
             tile.appendChild(pic);
             gameBoard.appendChild(tile);
             boardArr.push(tile);
             
     }   
-    // if(boardArr.length === 64) {
-    //     return;
-    // }
+    
  }
-           
- renderBoard();
+ 
+ gameBoard.addEventListener('click',function findMatch(e){
+        if(e.target.tagName === 'IMG') {
+        let tileName = e.target.classList[0]
+        MatchesArr.push(tileName);
+        console.log(MatchesArr);
+}   
+});
+   
+    // for ( of boardArr) {
+    // let clickedTile = boardArr[i]; 
+    // clickedTile.addEventListener('click',findMatch);  
+    // console.log('clicked');      
+// }   if(clickedTile.clicked === true)
+//     MatchesArr.push(clickedTile);
 
-console.log(tilesArr.length);
 
  
 //  function renderMessages(messageToPlayer) {
@@ -187,48 +202,39 @@ console.log(tilesArr.length);
  
  
    
-function shuffleBoard()  {
-  gameBoard.innerHTML = ''; //reset the inner html to hold nothing
-   let randomArr = [];        //temp holder for board array
-    while (boardArr.length > 0) {
-          let randomTile = boardArr.splice([Math.floor(Math.random() * boardArr.length)], 1)[0]
-          randomArr.push(randomTile)  //using splice on boardarr, will pick a random location within array and splice that index by passing in 1
-        }   
-    boardArr = randomArr;
-    for (let i=0; i < boardArr.length; i++) {
-        let tile = document.createElement('div');
-        tile.classList = 'tileCells';
-        let pic = document.createElement("img");
-        pic.setAttribute('src',boardArr[i].firstChild.getAttribute('src')); //boardarr index has one child(image-tag) which has an attribute that will use getAttribute to pass in src to grab the image
-        tile.appendChild(pic);
+// function shuffleBoard()  {
+//    let randomArr = [];        //temp holder for board array
+//     while (boardArr.length > 0) {
+//           let randomTile = boardArr.splice([Math.floor(Math.random() * boardArr.length)], 1)[0]
+//           randomArr.push(randomTile)  //using splice on boardarr, will pick a random location within array and splice that index by passing in 1
+//         }   
+//     boardArr = randomArr;
+    // for (let i=0; i < boardArr.length; i++) {
+    //     let tile = document.createElement('div');
+    //     tile.classList = 'tileCells';
+    //     let pic = document.createElement("img");
+    //     pic.setAttribute('src',boardArr[i].firstChild.getAttribute('src')); //boardarr index has one child(image-tag) which has an attribute that will use getAttribute to pass in src to grab the image
+    //     tile.appendChild(pic);
         
-        gameBoard.appendChild(tile);
-}
-playSound();
-};
+    //     gameBoard.appendChild(tile);
+// }
+// playSound();
 
 // Write findMatch function:
 /*When item clicked grab the object key name and store in an array and change to active status. Then second item clicked can be stored as well. Compare the 2 keys and if they match then highlight both and remove them and put them into another array to hide them. If not then return message to player. If item is clicked twice the item will be put back and active status removed.*/
 
-function findMatch(boardArr) {
-    for(const [key, value] of Object.entries(boardArr)) {
-        console.log(`${key}: ${value}`);
-    }
-findMatch();
+
     
 
 
-}
-console.log(Object.keys(boardArr))
+
 //this function will play sound when shuffle or restart game buttion is clicked
-function playSound() {
-        let sound = new Audio('dieShuffle3.wav');
-        sound.loop = false;
-        sound.play(); 
-        audio = document.querySelector('button');
-        audio.addEventListener('click');
+// function playSound() {
+//         let sound = new Audio('dieShuffle3.wav');
+//         sound.loop = false;
+//         sound.play(); 
+//         audio = document.querySelector('button');
 
 
-    }
-      
+//     }
     

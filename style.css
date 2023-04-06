@@ -32,6 +32,12 @@ div#side-div {
     border-radius: 5px;
     box-shadow: 7px 7px 5px darkgrey;
 }
+aside {
+    width: 200px;
+    height: 400px;
+    position: absolute;
+
+}
 
 section.game-play, p, h3 {
     background-color: lightgray;

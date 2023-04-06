@@ -38,18 +38,19 @@ div#side-div {
     background-color: lightgray;
 }
 
-#Board {
+#board {
     display: grid;
     grid-template-columns: repeat(8, 10vmin);
     margin: 10vmin 30vmin;
     height: 40vmin;
     width: 40vmin;
+    gap: 1vmin;
     place-items: center;
 }
 
-#Board > div {
-    height: 20px;
-    width: 20px;
+#board > div {
+    height: 15px;
+    width: 15px;
     background-color: black;
 }
 

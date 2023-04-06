@@ -36,7 +36,8 @@ Once the player selects every match on the board and they have all been removed 
  
  /*----- constants variables -----*/
 
-const  tiles = [
+ let  tilesArr = [
+
     { name:'r-bamboo', Image:'./images/r-bamboo.png'},
     { name:'bamboo2', Image:'./images/bamboo2-b.png'},
     { name:'blank', Image:'./images/blank.png'},
@@ -100,6 +101,7 @@ const  tiles = [
     {name:'man7', Image: '/images/man7.png'}, 
     {name:'pin8', Image: '/images/pin8-b.png'},
 
+
     {name:'bamboo9', Image:'/images/bamboo9.png'},
     {name:'pin9', Image:'/images/pin9-b.png'},
     {name:'man5', Image: '/images/man5.png'},
@@ -115,8 +117,7 @@ const  tiles = [
   /*----- changing variables -----*/
 let winner;
 
-
-
+const width = 8;
 
 
 //shuffle sound variable
@@ -128,7 +129,7 @@ let winner;
 const restartGame = document.querySelector('#Restart');
 const shuffleTiles = document.querySelector('#Shuffle');
 const messageToPlayer = document.querySelector('h2');
-
+const gameBoard = document.getElementById('board');
 
   /*----- event listeners -----*/
 restartGame.addEventListener('click',initialize);
@@ -154,18 +155,18 @@ function render() {
 
 
  function renderBoard() {
-    board.forEach(function (rowArr,rowIdx) {
-        rowArr.forEach(function (colVal, colIdx) {
-           const tileId = `r${rowIdx}c${colIdx}`; 
-           const tileEl =  document.getElementById(tileId);
-           console.log(rowIdx,colIdx)
-           const tileImg = document.createElement('img')
-           tileImg.setAttribute('src',boardArr.Image)
-           tileEl.appendChild(tileImg)
+        for (let i=0; i < width * width; i++) {
+            let tile = document.createElement('div');
+            tile.classList = 'tileCells';
+            tile.innerHTML= '';
+            gameBoard.appendChild(tile);
+            tilesArr.push(tile);
+        }
+
+ }
+   
            
-        });
- });
- } renderBoard()
+ renderBoard();
 
 
 

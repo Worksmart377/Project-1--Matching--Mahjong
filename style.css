@@ -41,10 +41,17 @@ section.game-play, p, h3 {
     
 }
 
+h3 {
+    text-decoration: underline;
+    text-shadow: black 1.5px 1px;
+    font-weight: bolder;
+}
+
 section.game-play {
     border-radius: 5px;
     box-shadow: 7px 7px 5px darkgrey;
 }
+
 #board {
     display: grid;
     grid-template-columns: repeat(8, 10vmin);

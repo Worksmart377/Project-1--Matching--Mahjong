@@ -164,7 +164,6 @@ function render() {
             gameBoard.appendChild(tile);
             boardArr.push(tile);
     }
-
  }
    
            
@@ -180,17 +179,29 @@ function render() {
  
  
    
-function shuffleBoard(boardArr)  {
-        for (let i = 0; i <boardArr.length; i++) {
-            let mix = Math.floor(Math.random() * (boardArr.length));
-            let tempV = boardArr[i];
-            boardArr[i] = boardArr[mix];
-            boardArr[mix] = tempV;
-        }
+function shuffleBoard()  {
+  gameBoard.innerHTML = ''; //reset the inner html to hold nothing
+   let randomArr = [];        //temp holder for board array
+    while (boardArr.length > 0) {
+          let randomTile = boardArr.splice([Math.floor(Math.random() * boardArr.length)], 1)[0]
+          randomArr.push(randomTile)  //using splice on boardarr, will pick a random location within array and splice that index by passing in 1
+        }   
+    boardArr = randomArr;
+    for (let i=0; i < boardArr.length; i++) {
+        let tile = document.createElement('div');
+        tile.classList = 'tileCells';
+        let pic = document.createElement("img");
+        pic.setAttribute('src',boardArr[i].firstChild.getAttribute('src')); //boardarr index has one child(image tag) which has an attribute that will use getattribute to pass in src to grab the image
+        tile.appendChild(pic);
         
+        gameBoard.appendChild(tile);
 }
+};
 
 
+// function findMatch(tilesArr) {
+
+// }
 //this function will play sound when shuffle or restart game buttion is clicked
 // playSound() {
 //     if(clicked) {

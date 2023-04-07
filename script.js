@@ -185,9 +185,6 @@ function countDown() {
             parentDivArr = []; //empty array
             },'600');    
             matchesArr = [];    //empty array
-            // if(boardArr.length <= 2) {
-            //     messageToPlayer.innerText = 'You Win! Great Job!';  
-            // }
             } else {
             matchesArr = [];
                 messageToPlayer.innerText = 'Not a match, try again!';  

@@ -9,6 +9,10 @@ h1 {
 
 h2 {
     color: rgb(138,21,28);
+    background-color: lightgray;
+    align-content: center;
+    margin: 7px 7px;
+    padding: 5px 5px;
 }
 
 h3 {
@@ -35,7 +39,9 @@ div#side-div {
 aside {
     width: 200px;
     height: 400px;
-    position: absolute;
+    background-color: lightgray;
+    padding: auto;
+
 
 }
 
@@ -62,17 +68,13 @@ section.game-play {
     display: grid;
     grid-template-columns: repeat(8, 10vmin);
     margin: 10vmin 30vmin;
-    height: 40vmin;
-    width: 40vmin;
+    min-height: 30vh;
+    width: 30vmin;
     gap: 3px;
     place-items: center;
 }
 
-#board > div {
-    height: 40px;
-    width: 40px;
-    background-color: black;
-}
+
 
 img {
     height: 100%;

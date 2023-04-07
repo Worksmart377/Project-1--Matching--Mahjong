@@ -1,10 +1,8 @@
-# Project-1--Mahjong Solitaire :turtle:
+# Project-1--Matching Mahjong :turtle:
 
 ## Browser based game created from HTML5, CSS, and Vanilla JavaScipt
 
 ## Intro:
-
-The first Solitaire computer game was programmed by Wes Cherry in 1988, according to wikipedia.com. It was first released in Microsoft Windows 3.0, and according to Microsoft telemetry, it was among the top 3 most used Windows programs. Also to note, in 2019 Microsoft Solitaire was inducted to The Strong National Museum of Play's World Video Game Hall of Fame. 
 
 The first Mahjong computer game was created in 1981 by Brodie Lockard. Brodie said that he based it off of the Chinese game "Turtle". There is some confusion with the original Mahjong four player game due to it's name and it uses the same tiles. Therefore it is also known as "Turtle", 'Shanghai Solitaire", "Taipei", and "Kyodai".
 
@@ -48,7 +46,6 @@ Furture Plans & Enhancements:
 
 Thank you Lord for helping me and blessing me with understanding!
 Thank you to all of my teachers and classmates who helped make this happen! 😇
-(<https://en.wikipedia.org/wiki/Microsoft_Solitaire#:~:text=Solitaire%20is%20a%20computer%20game,were%20designed%20by%20Susan%20Kare.>)
 
 (<https://en.wikipedia.org/wiki/Mahjong_solitaire>)
 

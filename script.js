@@ -1,32 +1,23 @@
  /*PseudoCode-
 
-The browser will load with all of the tiles layed out and the game will be ready to play and be initialized.
-The board will consist of a minimum of 8 rows and 8 columns of tiles (2D array).
-Each tile design will be assigned a numeric value so that when they are placed into the array they can be randomized and matched to their like tile. 
-The tiles will be placed into random order in the array using a shuffle function. 
+The browser will load with all of the tiles layed out and the game will be initialized.
+The timer will need to be started for the player to begin. 
+The board will consist of a minimum of 8 rows and 8 columns of tiles (array of objects).
+Each tile design will be assigned a name and image property so that when they are placed into the array they can be randomized and matched to their like tile. 
 
 Single Player Gameplay:
 
-The player will need to locate two exposed matching tiles, meaning they are open on the left or the right side. 
+The player will start the timer, which is 60 seconds. They will needs to beat the clock to win. 
 
-When the player clicks on a tile it will be highlighted (selected with an eventlistener) until the player clicks on it's match. These clicked items may have be added to a new empty array.  
-Once both have been clicked they will be highlighted for 3 seconds and then they will both be removed from the board (array) using a splice method. 
+The player will need to locate two matching tiles and select both of them to remove them from the board. 
 
-If the player clicks on an unmatching tile there will be a message that states "Tile is not a match. Try again!" (about 3 seconds)
+When the player clicks on a match the tiles will be added to a new array, the values will be compared, and if they are a match they will be highlighted for second then removed from the board.  
 
-If the player wants to change the originally clicked tile to select another set of matches, then they will have to reclick the highlighted tile in order to remove the selection. I think here I can use a class and a function to toggle between 'active' and 'not active' potentially placing the clicked tiles into a new empty array until they are clicked again to take them out.
-
-If the player has no visible and exposed tiles to click then they can click the shuffle button which will randomly shuffle all of the tiles left on the board using the shuffle function.
+If the player clicks on an unmatching tile there will be a message that states "Tile is not a match. Try again!" 
 
 Win Logic :
 
-Once the player selects every match on the board and they have all been removed then they win and they can click restart game to play again. This will replace the board for a new game and reshuffle tiles in a randomn order (intialize). When there are only 2 tiles left on the board there will be a message that states, "Great Job, you won!"
-
-
-
-
-
-
+If the player can beat the timer and the player selects every match on the board and they have all been removed then they win and they can click restart game to play again. This will replace the board for a new game.
 
 
 
@@ -192,7 +183,7 @@ function countDown() {
             parentDivArr[1].remove(); 
             parentDivArr[0].remove();
             parentDivArr = []; //empty array
-            },'1000');    
+            },'600');    
             matchesArr = [];    //empty array
             // if(boardArr.length <= 2) {
             //     messageToPlayer.innerText = 'You Win! Great Job!';  

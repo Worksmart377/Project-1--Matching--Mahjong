@@ -14,14 +14,15 @@ The first Mahjong computer game was created in 1981 by Brodie Lockard. Brodie sa
 
 
 ## Getting Started: 🀄
-Check out my game:
-<https://worksmart377.github.io/Project-1--Solitaire/>
 
 Basic Game Play Instructions:
 
 -This is a smaller version of Mahjong Solitaire. There are only 64 tiles that are layed out without layers. 
 
 -Your goal is find a match to each tile as fast as you can and remove them from the board until their are no tiles. Then you WIN!!  :trophy:
+
+Check out my game:
+<https://worksmart377.github.io/Project-1--Solitaire/>
 
 
 

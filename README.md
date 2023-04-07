@@ -50,7 +50,7 @@ Furture Plans & Enhancements:
 
 ### Thanks, Sources, and Licensing ©:
 
-Thank you Lord for helping me and blessing me with understanding!
+Thank you Lord for helping me and blessing me with understanding! Thank you to my husband for supporting me at every step ❤️‍🔥 !
 Thank you to all of my teachers and classmates who helped make this happen! 😇
 
 (<https://en.wikipedia.org/wiki/Mahjong_solitaire>)

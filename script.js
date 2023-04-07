@@ -138,6 +138,7 @@ initialize();
         renderBoard();
   }   
     playSound();
+    let seconds = 60;
     timer.innerHTML =`00:${seconds}`;
 
 } 
@@ -185,12 +186,12 @@ function countDown() {
             parentDivArr = []; //empty array
             },'600');    
             matchesArr = [];    //empty array
-            } else {
-            matchesArr = [];
-                messageToPlayer.innerText = 'Not a match, try again!';  
+                } else {
+                    matchesArr = [];
+                    messageToPlayer.innerText = 'Not a match, try again!';
+            }         
         } 
-    }  
- });
+});
  
 
 

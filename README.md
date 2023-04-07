@@ -10,7 +10,7 @@ The first Mahjong computer game was created in 1981 by Brodie Lockard. Brodie sa
 
 ## WireFrame & ScreenShots:
 
-![WireFrame Screenshot](images/Mahjong-wireframe.png)
+![WireFrame Screenshot](/images/Mahjong-Wireframe.png)
 
 
 ## Getting Started: 🀄

@@ -26,7 +26,7 @@ Basic Game Play Instructions:
 -Your goal is find a match to each tile as fast as you can and remove them from the board until their are no tiles. Then you WIN!!  :trophy:
 
 Check out my game:
-<https://worksmart377.github.io/Project-1--Solitaire/>
+<https://worksmart377.github.io/Project-1--Matching--Mahjong/>
 
 
 

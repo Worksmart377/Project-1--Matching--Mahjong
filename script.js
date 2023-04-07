@@ -38,10 +38,10 @@ Once the player selects every match on the board and they have all been removed 
 
  let  tilesArr = [
 
-    { name:'r-bamboo', Image:'./images/r-bamboo.png'},
-    { name:'bamboo2', Image:'./images/bamboo2-b.png'},
-    { name:'blank', Image:'./images/blank.png'},
-    { name:'bamboo4', Image:'./images/bamboo4-b.png'},
+    { name:'r-bamboo', Image:'/images/r-bamboo.png'},
+    { name:'bamboo2', Image:'/images/bamboo2-b.png'},
+    { name:'blank', Image:'/images/blank.png'},
+    { name:'bamboo4', Image:'/images/bamboo4-b.png'},
     { name:'chun', Image:'/images/chun.png'},
     { name:'bamboo5', Image:'/images/bamboo5-b.png'},
     { name:'man1', Image:'/images/man1.png'},

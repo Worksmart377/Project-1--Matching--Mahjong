@@ -159,7 +159,7 @@ initialize();
         for (let i=0; i < tilesArr.length; i++) {
             let tile = document.createElement('div');
             let pic = document.createElement("img");
-            pic.setAttribute('src',tilesArr[i].Image);
+            pic.setAttribute('src','.'+tilesArr[i].Image);
             pic.classList.add(tilesArr[i].name);
             tile.appendChild(pic);
             gameBoard.appendChild(tile);

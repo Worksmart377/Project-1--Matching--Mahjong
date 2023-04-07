@@ -46,7 +46,11 @@ Furture Plans & Enhancements:
 
 -Add blocked tiles that are not clickable until unblocked
 
+-Add changing style of the tiles button
+
 -Fix bug where you can click on the same tile twice to remove it
+
+-Fix bug where the game board doubles everytime you press new game button
 
 ### Thanks, Sources, and Licensing ©:
 

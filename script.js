@@ -134,9 +134,10 @@ initialize();
 
  function initialize() {
     
-    window.onload =function() {//reloads the page
-        renderBoard();
-  }   
+//     window.onload =function() {//reloads the page
+//         renderBoard();
+//   }   
+    renderBoard();
     playSound();
     let seconds = 60;
     timer.innerHTML =`00:${seconds}`;
@@ -164,7 +165,9 @@ function countDown() {
             tile.appendChild(pic);//adds child pic to tile
             gameBoard.appendChild(tile);//adds child tile to gameboard div
             boardArr.push(tile);//pushes the new divs into the empty boardArr
-            
+              if(boardArr.length === 64) {
+              return;
+            };
     }   
     
  }
@@ -189,6 +192,9 @@ function countDown() {
                 } else {
                     matchesArr = [];
                     messageToPlayer.innerText = 'Not a match, try again!';
+                        setTimeout( function() {
+                        messageToPlayer.style.visibility = 'hidden';
+                    },1000)
             }         
         } 
 });

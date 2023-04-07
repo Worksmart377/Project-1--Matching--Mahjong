@@ -14,17 +14,14 @@ The first Mahjong computer game was created in 1981 by Brodie Lockard. Brodie sa
 
 
 ## Getting Started: 🀄
-(Include a link to the deployed game)
+Check out my game:
+<https://worksmart377.github.io/Project-1--Solitaire/>
 
 Basic Game Play Instructions:
 
--This is a smaller version of Mahjong Solitaire. There are only 90 tiles that are layed out in a pattern with one layer overlapping. 
+-This is a smaller version of Mahjong Solitaire. There are only 64 tiles that are layed out without layers. 
 
--If a tile is exposed on either left or right side, then it can be clicked in order to match it to another tile and remove it from the board. 
-
--Your goal is find a match to each exposed tile and remove them from the board until their are no tiles. Then you WIN!!  :trophy:
-
-If you find that you are stuck then you can choose to shuffle the tiles. 
+-Your goal is find a match to each tile as fast as you can and remove them from the board until their are no tiles. Then you WIN!!  :trophy:
 
 
 
@@ -42,8 +39,14 @@ Furture Plans & Enhancements:
 
 -Add an undo move button
 
-### Sources & Licensing ©:
+-Add blocked tiles that are not clickable until unblocked
 
+-Fix bug where you can click on the same tile twice to remove it
+
+### Thanks, Sources, and Licensing ©:
+
+Thank you Lord for helping me and blessing me with understanding!
+Thank you to all of my teachers and classmates who helped make this happen! 😇
 (<https://en.wikipedia.org/wiki/Microsoft_Solitaire#:~:text=Solitaire%20is%20a%20computer%20game,were%20designed%20by%20Susan%20Kare.>)
 
 (<https://en.wikipedia.org/wiki/Mahjong_solitaire>)

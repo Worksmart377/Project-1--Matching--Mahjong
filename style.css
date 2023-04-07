@@ -7,13 +7,23 @@ h1 {
     text-align: center;
 }
 
-h2 {
+#message {
     color: rgb(138,21,28);
     background-color: lightgray;
     align-content: center;
     margin: 7px 7px;
     padding: 5px 5px;
 }
+
+#countdown {
+    color: white;
+    background-color: lightgray;
+    justify-content: center ;
+    align-content: center;
+    margin: auto;
+    padding: 5px 5px;
+}
+
 
 h3 {
     color: white;
@@ -73,7 +83,6 @@ section.game-play {
     gap: 3px;
     place-items: center;
 }
-
 
 
 img {

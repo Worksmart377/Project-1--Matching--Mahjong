@@ -115,12 +115,11 @@ Once the player selects every match on the board and they have all been removed 
 
 
   /*----- changing variables -----*/
-let winner;
 
-const width = 8;
  let boardArr = [];
  let matchesArr = [];
  let parentDivArr = [];
+ let seconds = 60;
 
 
 
@@ -128,112 +127,91 @@ const width = 8;
 
   /*----- cached elements  -----*/
 const restartGame = document.querySelector('#Restart');
-const shuffleTiles = document.querySelector('#Shuffle');
 const messageToPlayer = document.getElementById('message');
 const gameBoard = document.getElementById('board');
-
+const timer = document.getElementById('countdown');
+const timerBtn = document.getElementById('timer-btn')
+timer.innerHTML =`00:${seconds}`;
 
   /*----- event listeners -----*/
-restartGame.addEventListener('click',resetBoard);
-shuffleTiles.addEventListener('click',shuffleBoard);
- 
+restartGame.addEventListener('click',initialize);
+timerBtn.addEventListener('click', countDown)
 
 /*----- functions -----*/
 
 initialize();
 
- function resetBoard() {
-    renderBoard();
-    playSound();
- } 
-  
-  function initialize() {
-    // window.onload =function() {
-    //     renderBoard
-    //  }
-      renderBoard();
+ function initialize() {
     
-}
+    window.onload =function() {//reloads the page
+        renderBoard();
+  }   
+    playSound();
+    timer.innerHTML =`00:${seconds}`;
+
+} 
+  
+function countDown() {
+   let clock= setInterval(function() {
+        seconds --;
+        timer.innerHTML= `00:${seconds}`;
+        if(seconds < 0 || seconds <1) {
+            clearInterval(clock)
+            timer.innerHTML= `Time's up!`;
+                 let seconds = 60;
+        }
+    },1000)
+  }
 
  function renderBoard() {
         for (let i=0; i < tilesArr.length; i++) {
-            let tile = document.createElement('div');
-            let pic = document.createElement("img");
-            pic.setAttribute('src','.'+tilesArr[i].Image);
-            pic.classList.add(tilesArr[i].name);
-            tile.appendChild(pic);
-            gameBoard.appendChild(tile);
-            boardArr.push(tile);
+            let tile = document.createElement('div');//creating div using new variable tile
+            let pic = document.createElement("img");//creating img using new variable pic
+            pic.setAttribute('src','.'+tilesArr[i].Image);//setting the img src to tillesArr key Image
+            pic.classList.add(tilesArr[i].name);//adds classes to all new images using key name
+            tile.appendChild(pic);//adds child pic to tile
+            gameBoard.appendChild(tile);//adds child tile to gameboard div
+            boardArr.push(tile);//pushes the new divs into the empty boardArr
             
     }   
     
  }
  
  gameBoard.addEventListener('click',function(e){
-    if (e.target.tagName === 'IMG' && matchesArr.length <= 1) {
-        let tileName = e.target.classList[0]
-        matchesArr.push(tileName);
-        let parentDiv = e.target.parentElement;
-        parentDivArr.push(parentDiv);
-        console.log(e.target.parentElement);
+    if (e.target.tagName === 'IMG' && matchesArr.length <= 2) {//if item clicked is image and array length is less than 2
+        let tileName = e.target.classList[0] 
+        matchesArr.push(tileName);//push variable tileName into empty array
+        let parentDiv = e.target.parentElement; //
+        parentDivArr.push(parentDiv); //pushes the parent div into empty array
     }   
     if (matchesArr.length === 2) {  
-        if (matchesArr[0] === matchesArr[1]) {
-            console.log(matchesArr);
-            parentDivArr[0].style.border = 'solid 5px darkRed';
+        if (matchesArr[0] === matchesArr[1]) { //checks if items are a match
+            parentDivArr[0].style.border = 'solid 5px darkRed';//highlights the match when they are selected
             parentDivArr[1].style.border = 'solid 5px darkRed'; 
-            setTimeout( function() {
-            parentDivArr[1].remove();
+            setTimeout( function() { //waits to remove tiles until the match is displayed
+            parentDivArr[1].remove(); 
             parentDivArr[0].remove();
-            parentDivArr = []; 
-            },'2000');
-            // parentDivArr[1].remove();
-            // parentDivArr[0].remove();
-          
+            parentDivArr = []; //empty array
+            },'1000');    
+            matchesArr = [];    //empty array
+            // if(boardArr.length <= 2) {
+            //     messageToPlayer.innerText = 'You Win! Great Job!';  
+            // }
+            } else {
             matchesArr = [];
-            if(gameBoard.childElement === 2) {
-            messageToPlayer.innerText = 'You Win! Great Job!';  
-   
-            }
-        } else {
-            matchesArr = [];
-            messageToPlayer.innerText = 'Not a match, try again!';  
+                messageToPlayer.innerText = 'Not a match, try again!';  
         } 
     }  
- })
+ });
  
- 
-   
-function shuffleBoard()  {
-   let randomArr = [];        //temp holder for board array
-    while (boardArr.length > 0) {
-          let randomTile = boardArr.splice([Math.floor(Math.random() * boardArr.length)], 1)[0]
-          randomArr.push(randomTile)  //using splice on boardarr, will pick a random location within array and splice that index by passing in 1
-        }   
-    boardArr = randomArr;
-    for (let i=0; i < boardArr.length; i++) {
-        let tile = document.createElement('div');
-        tile.classList = 'tileCells';
-        let pic = document.createElement("img");
-        pic.setAttribute('src',boardArr[i].firstChild.getAttribute('src')); //boardarr index has one child(image-tag) which has an attribute that will use getAttribute to pass in src to grab the image
-        tile.appendChild(pic);
-        
-        gameBoard.appendChild(tile);
-}
-playSound();
-}
-
-
-    
-
 
 
 //this function will play sound when shuffle or restart game buttion is clicked
 function playSound() {
-        let sound = new Audio('dieShuffle3.wav');
-        sound.loop = false;
-        sound.play(); 
-        audio = document.querySelectorAll('button')
+        let sound = new Audio('dieShuffle3.wav');//sets audio source to new variable sound
+        sound.loop = false;//sets play loop to false
+        sound.play(); //uses play method on variable sound
+        audio = document.querySelectorAll('button') //selects both buttons
 
     }
     

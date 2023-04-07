@@ -143,7 +143,7 @@ shuffleTiles.addEventListener('click',shuffleBoard);
 initialize();
 
  function resetBoard() {
-    location.reload;
+    renderBoard();
     playSound();
  } 
   
@@ -181,11 +181,20 @@ initialize();
         if (matchesArr[0] === matchesArr[1]) {
             console.log(matchesArr);
             parentDivArr[0].style.border = 'solid 5px darkRed';
-            parentDivArr[1].style.border = 'solid 5px darkRed';
-            setTimeout(parentDivArr[0].remove(), 3.0 *1000);
-            setTimeout(parentDivArr[1].remove(), 3.0 * 1000);
-            parentDivArr = [];
+            parentDivArr[1].style.border = 'solid 5px darkRed'; 
+            setTimeout( function() {
+            parentDivArr[1].remove();
+            parentDivArr[0].remove();
+            parentDivArr = []; 
+            },'2000');
+            // parentDivArr[1].remove();
+            // parentDivArr[0].remove();
+          
             matchesArr = [];
+            if(gameBoard.childElement === 2) {
+            messageToPlayer.innerText = 'You Win! Great Job!';  
+   
+            }
         } else {
             matchesArr = [];
             messageToPlayer.innerText = 'Not a match, try again!';  

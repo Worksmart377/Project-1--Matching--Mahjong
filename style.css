@@ -68,8 +68,8 @@ section.game-play {
     display: grid;
     grid-template-columns: repeat(8, 10vmin);
     margin: 10vmin 30vmin;
-    min-height: 30vh;
-    width: 30vmin;
+    max-height: 25vh;
+    width: 25vh;
     gap: 3px;
     place-items: center;
 }
